@@ -26,6 +26,7 @@ COPY --from=build /opt/server /opt/server
 
 # Set working directory and user
 WORKDIR /opt/server
+EXPOSE 8080
 USER roboshop
 
 # Command to run the application
