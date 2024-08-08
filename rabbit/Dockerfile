@@ -1,3 +1,4 @@
 FROM rabbitmq
-RUN rabbitmqctl add_user roboshop roboshop123
-RUN rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+COPY rabbit.sh /usr/local/bin/rabbit.sh
+RUN chmod +x /usr/local/bin/rabbit.sh
+CMD ["/usr/local/bin/rabbit.sh"]
