@@ -1,0 +1,12 @@
+FROM node:20-alpine
+RUN apk add --no-cache bash
+RUN mkdir /opt/server
+RUN adduser -D -h /opt/server roboshop
+RUN chown roboshop:roboshop -R /opt/server
+WORKDIR /opt/server
+COPY package.json ./
+COPY *.js ./
+RUN npm install --production
+USER roboshop
+EXPOSE 8080
+CMD ["node", "index.js"]
