@@ -9,4 +9,4 @@ COPY server.js .
 RUN npm install --production
 USER roboshop
 EXPOSE 8080
-CMD ["node", "index.js"]
+CMD ["node", "server.js"]
