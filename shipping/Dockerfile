@@ -26,9 +26,9 @@ COPY --from=build /opt/server /opt/server
 
 # Set working directory and user
 WORKDIR /opt/server
-EXPOSE 8080
-USER roboshop
 
+USER roboshop
+EXPOSE 8080
 # Command to run the application
 CMD ["java", "-jar", "shipping.jar"]
 
