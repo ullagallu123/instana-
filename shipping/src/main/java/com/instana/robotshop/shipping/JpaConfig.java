@@ -23,6 +23,9 @@ public class JpaConfig {
 
     @Value("${DB_PASSWD}")
     private String dbPassword;
+    
+    @Value("${DB_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}")  // Default to MySQL driver if not set
+    private String driverClassName;
 
     @Bean
     public DataSource getDataSource() {
@@ -31,7 +34,7 @@ public class JpaConfig {
         logger.info("jdbc url {}", JDBC_URL);
 
         return DataSourceBuilder.create()
-                .driverClassName("com.mysql.jdbc.Driver")
+                .driverClassName(driverClassName)
                 .url(JDBC_URL)
                 .username(dbUser)
                 .password(dbPassword)
