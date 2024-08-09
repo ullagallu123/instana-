@@ -1,6 +1,10 @@
 # DB's and cache
 
 ```bash
+docker network create rb
+```
+
+```bash
 docker run --rm -dit --name mongo --network rb siva9666/mongo-instana:v1
 ```
 
@@ -74,16 +78,6 @@ docker run --rm -dit --name dispatch \
 ```bash
 docker run --rm -dit --name web -p 80:80 --network rb siva9666/web-instana:v2
 ```
-
-```bash
-docker run --rm -dit --name web -p 80:80 --network rb siva9666/web-instana:v2
-```
-
-```bash
-docker run --rm -dit --name debug --network rb siva9666/debug:2.0
-```
-
-
 # compose files
 
 db.yml
