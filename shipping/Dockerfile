@@ -1,4 +1,4 @@
-FROM maven:3.6.2-jdk-11 AS build
+FROM maven:3.8.5-openjdk-17 AS build
 RUN mkdir /opt/server
 WORKDIR /opt/server
 COPY pom.xml .
