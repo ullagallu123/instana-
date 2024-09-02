@@ -9,7 +9,7 @@ docker run --rm -dit --name mongo --network rb siva9666/mongo-instana:v1
 ```
 
 ```bash
-docker run --rm -dit --name debug --network rb siva9666/debug:2.0
+docker run --rm -dit --name debug --network rb siva9666/debug-utility:v1
 ```
 
 ```bash
