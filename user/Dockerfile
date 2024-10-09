@@ -6,7 +6,7 @@ RUN chown roboshop:roboshop -R /opt/server
 WORKDIR /opt/server
 COPY package.json .
 COPY server.js .
-RUN npm install --production
+RUN npm install --omit=dev
 USER roboshop
 EXPOSE 8080
 CMD ["node", "server.js"]
