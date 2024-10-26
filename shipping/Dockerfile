@@ -13,11 +13,8 @@ RUN adduser -D -h /opt/server roboshop \
 
 COPY --from=build /opt/server/shipping.jar /opt/server/shipping.jar
 
-ADD https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic.jar /opt/server/newrelic.jar
-COPY newrelic.yml /opt/server/newrelic.yml
-
 WORKDIR /opt/server
 USER roboshop
 EXPOSE 8080
 
-CMD ["java", "-javaagent:/opt/server/newrelic.jar", "-jar", "shipping.jar"]
+CMD ["java","-jar","shipping.jar"]
