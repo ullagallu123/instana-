@@ -155,7 +155,7 @@ function mongoConnect() {
         // Mutable & Immutable
         //tlsCAFile: `/home/roboshop/catalogue/rds-combined-ca-bundle.pem` //Specify the DocDB; cert
         // Container
-        tlsCAFile: `/app/rds-combined-ca-bundle.pem` //Specify the DocDB; cert
+        tlsCAFile: `/home/roboshop/catalogue/rds-combined-ca-bundle.pem` //Specify the DocDB; cert
     }, (error, client) => {
     if(error) {
         reject(error);
@@ -185,9 +185,6 @@ mongoLoop();
 
 // fire it up!
 const port = process.env.CATALOGUE_SERVER_PORT || '8080';
-const MONGO = process.env.MONGO || 'false';
-const DOCUMENTDB = process.env.DOCUMENTDB || 'false';
-
 app.listen(port, () => {
     logger.info('Started on port', port);
 });
